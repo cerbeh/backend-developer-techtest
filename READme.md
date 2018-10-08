@@ -30,3 +30,5 @@ ___
 **Wins:** Writing the routes/controllers dynamically so that there was only one function needed for each to return the relevant information.
 
 **Struggles:** I cheated a little in the seeds file where I have not capitalised the friends names in order for them to match the ```req.params.id``` passed through the GET request. If I was to spend more time on it I would consider using ```.splice()``` and ```toUpperCase()``` to capitalise the first letter of the name from the request, thereby allowing the user to use lowercase in the request but still have the friends names capitalised in the database.
+
+**Update (08/10/18):** Logic for the capitalisation of the names has now been added along with the server responding with a 500 status is in the error catcher.

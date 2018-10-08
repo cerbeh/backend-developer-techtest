@@ -6,28 +6,28 @@ const Friend = require('../models/friend');
 mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
   db.dropDatabase()
     .then(() => Friend.create([{
-      name: 'anne',
+      name: 'Anne',
       county: 'dorset'
     },{
-      name: 'brian',
+      name: 'Brian',
       county: 'essex'
     },{
-      name: 'carol',
+      name: 'Carol',
       county: 'hampshire'
     },{
-      name: 'derrick',
+      name: 'Derrick',
       county: 'lancashire'
     },{
-      name: 'elle',
+      name: 'Elle',
       county: 'merseyside'
     },{
-      name: 'fred',
+      name: 'Fred',
       county: 'wiltshire'
     },{
-      name: 'gail',
+      name: 'Gail',
       county: 'north-wales'
     },{
-      name: 'harry',
+      name: 'Harry',
       county: 'surrey'
     }]))
     .then(friends => console.log(`${friends.length} friends created`))

@@ -2,7 +2,10 @@ const Friend = require('../models/friend');
 const axios = require('axios');
 
 function findLocalForce(req, res) {
-  Friend.findOne({ name: req.params.id })
+
+  const name = req.params.id.charAt(0).toUpperCase() + req.params.id.slice(1);
+
+  Friend.findOne({ name })
     .then(friend => {
       axios.get(`https://data.police.uk/api/forces/${friend.county}`)
         .then(response => {
@@ -15,7 +18,10 @@ function findLocalForce(req, res) {
           return res.json(contactDetails);
         });
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      res.status(500);
+      console.log(err);
+    });
 }
 
 module.exports = {
